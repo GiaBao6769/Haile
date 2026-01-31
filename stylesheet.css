@@ -78,13 +78,22 @@ main{
     height: 20vh;
 }
 
-/* <!-----[HERO]-----> */
-#HERO{
-    /* background-image: linear-gradient(rgba(106, 216, 224, 0.176), rgba(114, 114, 114, 0.185)), 
-                                        url(images/banner.png);
+/* #INDEX-MAIN{
+    background-image: linear-gradient(rgba(106, 216, 224, 0.176), rgba(114, 114, 114, 0.185)), 
+                                    url(images/banner.png);
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat; */
+    background-repeat: no-repeat;
+} */
+
+/* <!-----[HERO]-----> */
+
+#HERO{
+    background-image: linear-gradient(rgb(30, 92, 22), rgba(30, 92, 22, 0.518)), 
+                                        url(images/deco.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
     background-color: var(--clr-main);
     flex-direction: column;
@@ -166,14 +175,24 @@ main{
 #PROSPECT{
     padding: 5rem;
     display: flex;
-    
+    justify-content: center;
+    gap: var(--space-mid);
 }
 
-#PROSPECT-DIV{
+.prospect-div{
     border: var(--border);
     border-radius: 1rem;
-    padding: 1rem;
-    margin: 2rem;
+    padding: var(--space-small);
+    max-width: 20rem;
+}
+
+.prospect-div h2{
+    text-align: center;
+    margin-bottom: var(--space-small);
+}
+
+.prospect-div p{
+    text-align: justify;
 }
 
 /* <!-----[ACHIEVEMENT-SECTION]-----> */
@@ -188,7 +207,6 @@ main{
 #COUNT-SECTION{
     margin-top: var(--space-mid);
     margin-bottom: var(--space-huge);
-    
 }
 
 .count-div{
@@ -219,6 +237,7 @@ main{
 
 .imageShowcase{
     display: flex;
+
     /* padding: 0 20vw 0 20vw; */
 }
 
@@ -226,7 +245,7 @@ main{
     aspect-ratio: 4/3;
     object-fit: cover;
     width: 30vw;
-    max-width: 20rem;
+    /* max-width: 20rem; */
     
 }
 
@@ -315,12 +334,13 @@ footer{
     /* height: 8rem; */
     align-items: center;
     margin-bottom: var(--space-small);
+}
+
+.hoverElement{
     transition: 0.2s;
 }
 
-
-
-.articleCard:hover{
+.hoverElement:hover{
     transform: scale(1.01);
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
