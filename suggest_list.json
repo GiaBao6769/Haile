@@ -1,0 +1,12 @@
+{
+    "journalList" : 
+    [
+        {
+            "path" : "demo"
+        },
+        
+        {
+            "path": "demo2"
+        }
+    ]
+}
