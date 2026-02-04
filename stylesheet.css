@@ -418,6 +418,7 @@ footer{
 
 .articleCardLink{
     text-decoration: none;
+    
 }
 
 .articleCardLink:hover{
@@ -427,6 +428,7 @@ footer{
 
 .articleCardHashtags{
     margin-top: var(--space-small);
+    margin-bottom: var(--space-small);
     display: flex;
     flex-wrap: wrap;
     gap: 0.4rem;
@@ -436,6 +438,8 @@ footer{
     border: var(--border);
     border-radius: 0.5rem;
     padding: 0.1rem;
+    color: black;
+    text-decoration: none;
 }
 
 .hashtag a{
@@ -573,12 +577,12 @@ footer{
 
 
 #BOTTOM-SECTION button:hover p{
-    font-size: 1.15rem;
+    transform:scale(1.05);
     color: var(--clr-main-dark);
 }
 
 #BOTTOM-SECTION button:hover i{
-    transform:scale(2.3);
+    transform:scale(2.1);
     color: var(--clr-main-dark);
 }
 
@@ -928,13 +932,9 @@ footer{
 }
 
 
-
-
 .articleCardTitle{
     font-size: 1.5rem;
 }
-
-
 
 #SUGGEST-ARTICLES .articleCard{
     min-width: 45vw;
@@ -948,5 +948,21 @@ footer{
     margin: 0.5rem;
 }
 
+#SUGGEST-ARTICLES .articleCardTitle{
+    font-size: 1.3rem;
 }
 
+#SUGGEST-ARTICLES .articleCardDesc{
+    font-size: 0.9rem;
+}
+
+}
+
+.searchContent{
+    display: inline;
+    font-style: italic;
+}
+
+.searchContent::before, .searchContent::after{
+    content: "\"";
+}

@@ -2,13 +2,24 @@
     "journalList" : 
     [
         {
+            "path": "tutorial",
+            "state": "private"
+        },
+
+        {
             "path" : "demo"
         },
+
         
         {
             "path": "demo2"
-        }
+        },
 
-        
+        {
+            "path": "demo3",
+            "state": "private"
+        }
+    
     ]
 }
+

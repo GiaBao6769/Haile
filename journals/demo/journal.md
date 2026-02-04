@@ -10,7 +10,7 @@ Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique nulla, neces
 
 [img] img1.png: Image description
 
-[hashtags] #hashtagA #hashtagB #hashtagC
+[hashtags] hashtagA hashtagB hashtagC
 
 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique nulla, necessitatibus ipsa delectus repudiandae amet sed obcaecati commodi perspiciatis fuga magnam quae, unde sit laudantium modi illum provident nihil quas.
 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique nulla, necessitatibus ipsa delectus repudiandae amet sed obcaecati commodi perspiciatis fuga magnam quae, unde sit laudantium modi illum provident nihil quas.

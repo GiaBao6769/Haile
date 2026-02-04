@@ -22,17 +22,18 @@
 
 <main>
 
-<form>
-    <div id="SEARCH-SECTION">
-        <div id="SEARCH-DIV">
-            <input type="search" id="SEARCHBAR" placeholder="Search">
+<div id="SEARCH-SECTION">
+    <div id="SEARCH-DIV">
+        <form action="search.html" method="get">
+            <input type="search" name="q" id="SEARCHBAR" placeholder="Search">
             <i class="lni lni-search-1"></i>
-        </div>
+        </form>
+
     </div>
-</form>
+</div>
 
 <div id="SUGGEST" class="section">
-    <h1>SUGGEST ARTICLES</h1>
+    <h1>SUGGESTED ARTICLES</h1>
     <br><hr><br>
 
     <div id="SUGGEST-ARTICLES">
@@ -60,6 +61,10 @@
 </body>
 
 <script type="module"  src="load_templates.js"></script>
-<script type="module" src="load_article.js"></script>
+<script type="module">
+    import { preloadTemplates, generateArticleCards, artObjs, suggestArtObjs} from "./preload.js";
+    generateArticleCards("SUGGEST-ARTICLES", suggestArtObjs);
+    generateArticleCards("LATEST", artObjs);
+</script>
 
 </html>

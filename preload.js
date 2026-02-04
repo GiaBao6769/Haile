@@ -20,11 +20,10 @@ export async function preloadTemplates() {
 //     "author": "",
 //     "date": "",
 //     "thumbnail": "",
+//     "state": ""
 //     "tags": []
+//     
 // };
-
-
-
 
 async function createAObj(path){
     let PATH = "journals\\" + path + "\\journal.md"; 
@@ -51,7 +50,14 @@ async function createAObj(path){
         else if (line.startsWith("[hashtags]")) {
             let keys = line.split(" ");
             hashtags = keys.slice(1);
+            if (hashtags.length){
+                hashtags[hashtags.length - 1] = hashtags[hashtags.length - 1].replace(/\r$/, "");
+            }
         }
+    }
+
+    if (thumbnail === null){
+        thumbnail = "../images/no_thumbnail.png";
     }
 
     return new Object({
@@ -71,6 +77,7 @@ async function getArtObjs(path){
     const jObjs = Object.values(data.journalList);
     let artObjs = [];
     for (let jO of jObjs){
+        if (jO.state==="private") continue;
         let Oj = await createAObj(jO.path);
         artObjs.push(Oj);
     }
@@ -82,3 +89,46 @@ export const artObjs = await getArtObjs("journal_list.json");
 export const suggestArtObjs = await getArtObjs("suggest_list.json");
 
 // remember to remove /r next time
+
+
+
+async function addJournalCard(target, journal){
+    let root = await preloadTemplates();
+
+    const template = root.querySelector("#ARTICLECARD-TEMP");
+
+    if (!template) {
+        console.error("Template not found:", "articleCard");
+        return;
+    }
+    let clone = template.content.cloneNode(true);
+    clone.querySelector(".articleCardLink").href = `articleTemplate.html?journal=journals/${journal.path}`;
+    clone.querySelector(".articleCardImg").src = `journals/${journal.thumbnail}`;
+    clone.querySelector(".articleCardTitle").textContent = journal.title;
+    clone.querySelector(".articleCardDesc").textContent = journal.desc;
+    if (journal.hashtags !== null){
+        for (let tag of journal.hashtags){
+            const a = document.createElement("a");
+            a.classList.add("hashtag")
+            a.textContent = tag;
+            a.href=`search.html?hashtag=${tag}`;
+            clone.querySelector(".articleCardHashtags").appendChild(a);
+        }
+    }
+
+
+    document.getElementById(target).appendChild(clone);
+}
+
+export async function generateArticleCards(sectionId, artObjs){
+    try{
+        artObjs.forEach(aO => {
+            addJournalCard(sectionId, aO);
+        })
+    }
+    catch (err){
+        console.error(err);
+    }
+}
+
+//remember to allow space between line in md
