@@ -109,7 +109,7 @@ async function addJournalCard(target, journal){
     if (journal.hashtags !== null){
         for (let tag of journal.hashtags){
             const a = document.createElement("a");
-            a.classList.add("hashtag")
+            a.classList.add("hashtag");
             a.textContent = tag;
             a.href=`search.html?hashtag=${tag}`;
             clone.querySelector(".articleCardHashtags").appendChild(a);
