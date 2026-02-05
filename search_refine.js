@@ -4,7 +4,7 @@ import {generateArticleCards, artObjs} from "./preload.js";
 async function refineArtWithTag(hashtag){
     let refinedArts = [];
     for (let artObj of artObjs){
-        if (artObj.hashtags.includes(hashtag)){
+        if (artObj.hashtags !== null && artObj.hashtags.includes(hashtag)){
             refinedArts.push(artObj);
         }
     }
@@ -16,12 +16,16 @@ async function refineArtWithTitle(content){
     let refinedArts = [];
     for (let artObj of artObjs){
         let checkTag = false;
-        for (let tag of artObj.hashtags){
-            if (tag.toLowerCase() === content){
-                checkTag = true;
-                break;
+        if (artObj.hashtags !== null){
+            for (let tag of artObj.hashtags){
+                if (tag.toLowerCase() === content){
+                    checkTag = true;
+                    break;
+                }
             }
         }
+        
+
         if (checkTag || artObj.title.toLowerCase().includes(content)){
             refinedArts.push(artObj);
         }

@@ -16,7 +16,7 @@ async function loadArticle(journalPath) {
             }
             else if (line.startsWith("[authors]")) {
                 
-                let authors = line.slice(9).split(",");
+                let authors = line.slice(9).split(";");
                 if (authors.length==1){
                     const p = document.createElement("p");
                     p.innerHTML = `<b>Author</b>: ${authors[0]}`;

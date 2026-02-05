@@ -1,6 +1,6 @@
 [title] Hướng dẫn cách đăng và quản lí bài trên web
 [desc] Đây là bài viết về các công đoạn chính để đăng và quản lí bài.
-[authors] Hiệu đính: Hoàng Gia Bảo, Làm không công: Hoàng Gia Bảo
+[authors] <b>Phó giáo sư, tiến sĩ</b> Hoàng Gia Bảo; <b>PHD, Dr.</b> Bảo Hoàng
 [date] 04/02/2026
 
 [HEADING] TẠO BÀI VIẾT
@@ -12,10 +12,9 @@ Tags là câu lệnh chung để chương trình hiểu và chuyển hóa nội 
 <b>Nhan đề:</b> [title]
 <b>Mô tả:</b> [desc]
 <b>Tác giả</b> [authors]
-[tab] [authors] vai trò: tên tác giả
-Một bài viết có thể có nhiều tác giả, nên bạn có thể thêm nhiều  người và cụ thể hóa chức danh của từng người bằng cấu trúc sau:
-[tab] [authors] tên tác giả 1, tên tác giả 2
-[tab] [authors] vai trò 1: tên tác giả 1, vai trò 2: tên tác giả 2
+[tab] [authors] tên tác giả
+Một bài viết có thể có nhiều tác giả, nên bạn có thể thêm nhiều  người bằng cấu trúc sau:
+[tab] [authors] tác giả 1; tác giả 2
 
 <b>Ngày viết hoặc công bố</b> [date]
 <b>Nguồn</b> (nếu bài viết được lấy từ nguồn khác): [source]
