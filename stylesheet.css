@@ -860,6 +860,11 @@ footer{
     width: 60vw;
 }
 
+#DESC{
+    margin-left: var(--space-small);
+    margin-right: var(--space-small);
+}
+
 }
 
 @media(max-width: 500px){

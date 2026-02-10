@@ -13,6 +13,7 @@ async function loadArticle(journalPath) {
         for (const line of lines) {
             if (line.startsWith("[title]")) {
                 document.getElementById("TITLE").textContent = line.slice(7);
+                document.title = line.slice(7);
             }
             else if (line.startsWith("[authors]")) {
                 
